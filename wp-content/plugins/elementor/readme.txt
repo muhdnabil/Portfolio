@@ -4,7 +4,7 @@ Tags: page builder, editor, landing page, drag-and-drop, elementor,
 Requires at least: 6.3
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 3.24.0
+Stable tag: 3.24.5
 Beta tag: 3.24.0-beta3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -315,6 +315,28 @@ You can also add a new language via [translate.wordpress.org](https://go.element
 6. **Motion Effects** - Add entrance animations and transitions to any element in your website to captivate visitors.
 
 == Changelog ==
+
+= 3.24.5 - 2024-10-01 =
+
+* Fix: Responsive styles not loading properly for Apple WebKit
+* Fix: Responsive styles not loading properly for Lightbox
+
+= 3.24.4 - 2024-09-23 =
+
+* Security Fix: Improved code security enforcement in Heading and Counter widgets
+* Security Fix: Improved code security enforcement in Template Library
+
+= 3.24.3 - 2024-09-18 =
+
+* Fix: 404 console error when loading custom animations ([#28727](https://github.com/elementor/elementor/issues/28727))
+
+= 3.24.2 - 2024-09-13 =
+
+* Fix: Widget styles not loading correctly affecting the layout on front ([#28693](https://github.com/elementor/elementor/issues/28693))
+
+= 3.24.1 - 2024-09-12 =
+
+* Fix: Widget styles not loading correctly on front causing alignment inconsistencies ([#28676](https://github.com/elementor/elementor/issues/28676))
 
 = 3.24.0 - 2024-09-10 =
 

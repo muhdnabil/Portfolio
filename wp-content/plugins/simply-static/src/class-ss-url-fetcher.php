@@ -252,6 +252,7 @@ class Url_Fetcher {
 
 		$args = array(
 			'timeout'     => self::TIMEOUT,
+			'user-agent'  => 'Simply Static/' . SIMPLY_STATIC_VERSION,
 			'sslverify'   => false,
 			'redirection' => 0, // disable redirection.
 			'blocking'    => true,

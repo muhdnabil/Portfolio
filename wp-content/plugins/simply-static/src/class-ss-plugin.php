@@ -158,7 +158,6 @@ class Plugin {
 		require_once $path . 'src/tasks/class-ss-setup-task.php';
 		require_once $path . 'src/tasks/class-ss-fetch-urls-task.php';
 		require_once $path . 'src/tasks/class-ss-transfer-files-locally-task.php';
-		require_once $path . 'src/tasks/class-ss-simply-cdn-task.php';
 		require_once $path . 'src/tasks/class-ss-create-zip-archive.php';
 		require_once $path . 'src/tasks/class-ss-wrapup-task.php';
 		require_once $path . 'src/tasks/class-ss-cancel-task.php';
@@ -274,7 +273,8 @@ class Plugin {
 
 		do_action( 'ss_before_render_export_log', $blog_id );
 
-		$offset = ( intval( $current_page ) - 1 ) * intval( $per_page );
+		$per_page = $per_page ?: 25;
+		$offset   = ( intval( $current_page ) - 1 ) * intval( $per_page );
 
 		$static_pages = apply_filters(
 			'ss_total_pages_log',

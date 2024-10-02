@@ -46,7 +46,7 @@ class Page extends Model {
 		'error_message'       => 'VARCHAR(255) NULL',
 		'status_message'      => 'VARCHAR(255) NULL',
 		'handler'             => 'VARCHAR(255) NULL',
-		'json'                => 'JSON NULL',
+		'json'                => 'TEXT NULL',
 		'last_checked_at'     => "DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00'",
 		'last_modified_at'    => "DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00'",
 		'last_transferred_at' => "DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00'",
@@ -187,7 +187,9 @@ class Page extends Model {
 	 * @return boolean
 	 */
 	public function is_type( $content_type ) {
-		return stripos( $this->content_type, $content_type ) !== false;
+		if ( ! is_null( $this->content_type ) ) {
+			return stripos( $this->content_type, $content_type ) !== false;
+		}
 	}
 
 	/**
@@ -283,7 +285,7 @@ class Page extends Model {
 	 * Set the JSON data for a key.
 	 *
 	 * @param string $key Key under which sets the data.
-	 * @param mixed  $data Mixed data.
+	 * @param mixed $data Mixed data.
 	 *
 	 * @return void
 	 */
