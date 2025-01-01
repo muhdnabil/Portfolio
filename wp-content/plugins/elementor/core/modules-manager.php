@@ -94,10 +94,10 @@ class Modules_Manager {
 			'compatibility-tag',
 			'generator-tag',
 			'elements-color-picker',
+			'elementor-counter',
 			'shapes',
 			'favorites',
 			'admin-top-bar',
-			'checklist',
 			'element-manager',
 			'nested-elements',
 			// Depends on Nested Elements module
@@ -123,6 +123,7 @@ class Modules_Manager {
 			'content-sanitizer',
 			'editor-events',
 			'atomic-widgets',
+			'global-classes',
 			'wc-product-editor',
 			'checklist',
 		];

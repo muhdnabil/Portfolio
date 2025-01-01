@@ -127,7 +127,7 @@ class Plugin {
 	public function get_integrations() {
 		return $this->integrations->get_integrations();
 	}
-    
+
 	public function get_integration( $integration ) {
 		$integrations = $this->integrations->get_integrations();
 		if ( empty( $integrations[ $integration ] ) ) {
@@ -152,6 +152,7 @@ class Plugin {
 		require_once $path . 'src/class-ss-url-extractor.php';
 		require_once $path . 'src/class-ss-url-fetcher.php';
 		require_once $path . 'src/class-ss-archive-creation-job.php';
+		require_once $path . 'src/tasks/traits/class-skip-further-processing-exception.php';
 		require_once $path . 'src/tasks/traits/trait-can-process-pages.php';
 		require_once $path . 'src/tasks/traits/trait-can-transfer.php';
 		require_once $path . 'src/tasks/class-ss-task.php';
@@ -183,7 +184,7 @@ class Plugin {
 	 * Old method to include admin menu.
 	 *
 	 * @return void
-     * @deprecated
+	 * @deprecated
 	 */
 	public function add_plugin_admin_menu() {
 		// Deprecated, only for upgrade support.
@@ -202,10 +203,10 @@ class Plugin {
 		}
 		do_action( 'ss_before_static_export', $blog_id, $type );
 
-        // Clear transients.
-        Util::clear_transients();
+		// Clear transients.
+		Util::clear_transients();
 
-        // Start export.
+		// Start export.
 		$this->archive_creation_job->start( $blog_id, $type );
 
 		// Exit if Basic Auth but no credentials were provided.
@@ -300,10 +301,23 @@ class Plugin {
 				$display_url = Util::get_path_from_local_url( $parent_static_page->url );
 				$msg         .= "<a href='" . $parent_static_page->url . "'>" . sprintf( __( 'Found on %s', 'simply-static' ), $display_url ) . "</a>";
 			}
+
+			// Combine status messages.
 			if ( $msg !== '' && $static_page->status_message ) {
-				$msg .= '; ';
+				$msg .= ' ';
 			}
-			$msg .= $static_page->status_message;
+
+			// Avoid duplicate status messages.
+			if ( ! empty ( $static_page->status_message ) ) {
+				if ( strpos( $static_page->status_message, ';' ) !== false ) {
+					$cleaned = implode( '', array_unique( explode( '; ', $static_page->status_message ) ) );
+					$msg     .= $cleaned;
+				} else {
+					$msg .= $static_page->status_message;
+				}
+			} else {
+				$msg .= $static_page->status_message;
+			}
 
 			$information = [
 				'id'          => $static_page->id,
@@ -415,31 +429,17 @@ class Plugin {
 	 * @return array
 	 */
 	public function add_http_filters( $parsed_args, $url ) {
-		// Check for Basic Auth credentials.
-		if ( strpos( $url, get_bloginfo( 'url' ) ) !== false ) {
-			$digest = base64_encode( self::$instance->options->get('http_basic_auth_username') . ':' . self::$instance->options->get('http_basic_auth_password') );
 
-			if ( $digest ) {
-				$parsed_args['headers']['Authorization'] = 'Basic ' . $digest;
-			}
-		}
-
-		// Check for Freemius.
-		if ( false === strpos( $url, '://api.freemius.com' ) ) {
+		if ( ! Util::is_local_url( $url ) ) {
 			return $parsed_args;
 		}
 
-		if ( empty( $parsed_args['headers'] ) ) {
-			return $parsed_args;
-		}
+		// Basic Auth?
+		$basic_auth_user = self::$instance->options->get( 'http_basic_auth_username' );
+		$basic_auth_pass = self::$instance->options->get( 'http_basic_auth_password' );
 
-		foreach ( $parsed_args['headers'] as $key => $value ) {
-			if ( 'Authorization' === $key ) {
-				$parsed_args['headers']['Authorization2'] = $value;
-			} else if ( 'Authorization2' === $key ) {
-				$parsed_args['headers']['Authorization'] = $value;
-				unset( $parsed_args['headers'][ $key ] );
-			}
+		if ( ! empty( $basic_auth_user ) && ! empty( $basic_auth_pass ) ) {
+			$parsed_args['headers']['Authorization'] = 'Basic ' . base64_encode( $basic_auth_user . ':' . $basic_auth_pass );
 		}
 
 		return $parsed_args;

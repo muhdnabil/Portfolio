@@ -2,9 +2,9 @@
 Contributors: patrickposner
 Tags: static site generator, performance, security, jamstack
 Requires at least: 6.3
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 3.1.9
+Stable tag: 3.2.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -246,6 +246,76 @@ Simply Static creates a static copy of your WordPress site that is intended to b
 3. Diagnostics
 
 == Changelog ==
+
+= 3.2.5.2 =
+
+* upgraded WP Background Processing package
+* fixed typo in admin UI
+* increased interval between batches to 2 seconds (from 1 second)
+
+= 3.2.5.1 =
+
+* XML sitemap inclusion optional for single exports
+* fixed _load_textdomain_just_in_time error
+
+= 3.2.5 =
+
+* added filter to modify log file location
+* small UI factor to fix weird WP default border styles in admin UI
+* trait to make tasks skippable
+* implemented cleanup method that can be extended in tasks
+* decreased default job interval to 1 second instead of 5
+
+= 3.2.4.2 =
+
+* small UI changes related to GitHub
+* improved filter handling to increase batch size
+* allow tasks to define their own batch size
+
+= 3.2.4.1 =
+
+* fixed dbDelta migration for new JSON column
+
+= 3.2.4 =
+
+* automatically create the local directory if it doesn't exist
+* Limit Basic Auth to URLs that pass is_local_url() check
+* WordPress 6.7 compatibility
+
+= 3.2.3 =
+
+* removed processing_pages_message method
+* added the ability to include files without a file extension (_headers, _redirects..)
+* added UI to reset database table
+* included diagnostics check for no-index setting
+* included diagnostics check for Basic Auth without proper configuration in settings
+* tweak to avoid duplicate notes in export log
+* renamed Simply Static (Admin Bar) to Admin Bar (Core)
+* renamed Environments to Environment (Core)
+* simplified http_request_args filter implementation
+* added notice to upgrade both (pro and free) because of removing deprecated methods
+
+= 3.2.2 =
+
+* officially deprecated delete_transients method
+
+= 3.2.1 =
+
+* improved file handling on local transfer task
+* refactored transient handling for task handling
+* renamed delete_transients to delete_total_pages for consistency
+
+= 3.2.0 =
+
+* improved URL replacement in Offline Mode
+* automated temporary file path handling
+* SQLite support for potential Playground support
+* removed dynamic htaccess for debug log handling
+* added version number in default settings in upgrade handler
+* enhanced integrations implementation to allow deactivated integrations by default
+* improved wording around SFTP integration
+* improved default values for excludes
+
 
 = 3.1.9 =
 

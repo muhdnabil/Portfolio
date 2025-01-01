@@ -40,9 +40,14 @@ class ElementsKit_Widget_Countdown_Timer extends Widget_Base {
     public function get_help_url() {
         return 'https://wpmet.com/doc/countdown-timer/';
     }
+
     protected function is_dynamic_content(): bool {
         return false;
     }
+
+	public function has_widget_inner_wrapper(): bool {
+		return ! Plugin::$instance->experiments->is_feature_active( 'e_optimized_markup' );
+	}
 
     protected function register_controls() {
         $this->start_controls_section(
@@ -1786,8 +1791,8 @@ class ElementsKit_Widget_Countdown_Timer extends Widget_Base {
 		}
 
 		$this->add_render_attribute('ekit_countdown_timer', [
-			'data-finish-title' => esc_attr($ekit_countdown_timer_title),
-			'data-finish-content' => esc_attr($ekit_countdown_timer_expiry_content),
+			'data-finish-title' => wp_strip_all_tags($ekit_countdown_timer_title),
+			'data-finish-content' => wp_strip_all_tags($ekit_countdown_timer_expiry_content),
 		]);
 
 		switch ( $ekit_countdown_timer_style ) {

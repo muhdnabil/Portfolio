@@ -35,9 +35,14 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
     public function get_help_url() {
         return 'https://wpmet.com/doc/icon-box-4/';
     }
+
     protected function is_dynamic_content(): bool {
         return false;
     }
+
+	public function has_widget_inner_wrapper(): bool {
+		return ! Plugin::$instance->experiments->is_feature_active( 'e_optimized_markup' );
+	}
 
     protected function register_controls() {
 
@@ -60,7 +65,9 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
                 'default'   => 'disable',
                 'prefix_class'  => 'ekit-equal-height-',
                 'selectors' => [
-					'{{WRAPPER}}.ekit-equal-height-enable, {{WRAPPER}}.ekit-equal-height-enable .elementor-widget-container, {{WRAPPER}}.ekit-equal-height-enable .ekit-wid-con, {{WRAPPER}}.ekit-equal-height-enable .ekit-wid-con .elementskit-infobox' => 'height: 100%;',
+					'{{WRAPPER}}.ekit-equal-height-enable,
+					{{WRAPPER}}.ekit-equal-height-enable .ekit-wid-con,
+					{{WRAPPER}}.ekit-equal-height-enable .ekit-wid-con .elementskit-infobox' => 'height: 100%;',
                 ],
             ]
         );
@@ -902,8 +909,7 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000000',
                 'selectors' => [
-                    '{{WRAPPER}} .elementskit-infobox .icon-hover i' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .elementskit-infobox .icon-hover > svg path'   => 'stroke: {{VALUE}}; fill: {{VALUE}};'
+                    '{{WRAPPER}} .elementskit-infobox .icon-hover' => 'color: {{VALUE}};fill: {{VALUE}};',
                 ],
                 'condition' => [
                     'ekit_icon_box_enable_water_mark' => 'yes',
@@ -929,8 +935,7 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
                     'size' => 100,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .elementskit-infobox .icon-hover > i' => 'font-size: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .elementskit-infobox .icon-hover > svg'    => 'max-width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elementskit-infobox .icon-hover > :is(i, svg)' => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'ekit_icon_box_enable_water_mark' => 'yes',
@@ -969,8 +974,7 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#656565',
                 'selectors' => [
-                    '{{WRAPPER}} .elementkit-infobox-icon' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .elementskit-info-box-icon > svg path' => 'fill: {{VALUE}}; stroke: {{VALUE}};'
+                    '{{WRAPPER}} .elementskit-info-box-icon' => 'color: {{VALUE}};fill: {{VALUE}};',
                 ],
                 'condition' => [
                     'ekit_icon_box_enable_header_icon' => 'icon'
@@ -1016,7 +1020,7 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'ekit_icon_icon_box_shadow_normal_group',
-                'selector' => '{{WRAPPER}} .elementskit-infobox .elementskit-info-box-icon',
+                'selector' => '{{WRAPPER}} .elementskit-info-box-icon',
             ]
         );
         $this->end_controls_tab();
@@ -1035,8 +1039,7 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .elementskit-infobox:hover .elementskit-info-box-icon i' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .elementskit-infobox:hover .elementskit-info-box-icon svg path' => 'fill: {{VALUE}}; stroke: {{VALUE}};',
+                    '{{WRAPPER}} .elementskit-infobox:hover .elementskit-info-box-icon' => 'color: {{VALUE}};fill: {{VALUE}};',
                 ],
                 'condition' => [
                     'ekit_icon_box_enable_header_icon' => 'icon'
@@ -1109,12 +1112,11 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
                     'unit' => 'px',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .elementskit-infobox .elementskit-info-box-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .elementskit-info-box-icon > svg'  => 'max-width: {{SIZE}}{{UNIT}}; height: auto;'
+                    '{{WRAPPER}} .elementskit-infobox .elementskit-info-box-icon' => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
                 'separator' => 'before',
                 'condition' => [
-                        'ekit_icon_box_enable_header_icon' => 'icon'
+					'ekit_icon_box_enable_header_icon' => 'icon'
                 ]
             ]
         );
@@ -1329,6 +1331,47 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
                 ],
             )
         );
+
+        $this->add_control(
+            'ekit_icon_box_btn_icon_right_space',
+            [
+                'label' => esc_html__( 'Icon Space', 'elementskit-lite' ),
+                'type' => Controls_Manager::SLIDER,
+                'default' => [
+                    'size' => 5,
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .elementskit-btn i' => 'margin-left: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elementskit-btn svg' => 'margin-left: {{SIZE}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'ekit_icon_box_icons__switch'   => 'yes',
+                    'ekit_icon_box_icon_align'      => 'right',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'ekit_icon_box_btn_icon_left_space',
+            [
+                'label' => esc_html__( 'Icon Space', 'elementskit-lite' ),
+                'type' => Controls_Manager::SLIDER,
+                'default' => [
+                    'size' => 5,
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .elementskit-btn i' => 'margin-right: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elementskit-btn svg' => 'margin-right: {{SIZE}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'ekit_icon_box_icons__switch'   => 'yes',
+                    'ekit_icon_box_icon_align'      => 'left',
+                ],
+            ]
+        );
+        
         $this->start_controls_tabs( 'tabs_button_style' );
 
         $this->start_controls_tab(
@@ -1345,8 +1388,7 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .elementskit-btn' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .elementskit-btn svg path' => 'stroke: {{VALUE}}; fill: {{VALUE}};',
+                    '{{WRAPPER}} .elementskit-btn' => 'color: {{VALUE}};fill: {{VALUE}};',
                 ],
             ]
         );
@@ -1410,7 +1452,6 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .elementskit-infobox:hover .elementskit-btn' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .elementskit-infobox:hover .elementskit-btn svg path' => 'stroke: {{VALUE}}; fill: {{VALUE}};',
                 ],
             ]
         );

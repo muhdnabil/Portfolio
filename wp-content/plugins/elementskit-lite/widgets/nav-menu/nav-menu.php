@@ -1583,12 +1583,12 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
         }
 
 		?>
-		<div class="ekit-wid-con <?php echo esc_attr($settings['elementskit_responsive_breakpoint']); ?>" 
+		<nav class="ekit-wid-con <?php echo esc_attr($settings['elementskit_responsive_breakpoint']); ?>" 
 			data-hamburger-icon="<?php echo esc_attr($hamburger_icon_value); ?>" 
 			data-hamburger-icon-type="<?php echo esc_attr($hamburger_icon_type); ?>" 
 			data-responsive-breakpoint="<?php echo esc_attr($responsive_menu_breakpoint); ?>">
 			<?php $this->render_raw(); ?>
-		</div>
+        </nav>
 		<?php
     }
 
@@ -1633,18 +1633,31 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
             }
 
             $metadata = \ElementsKit_Lite\Utils::img_meta(esc_attr($settings['elementskit_nav_menu_logo']['id']));
+
 			$markup = '<div class="elementskit-nav-identity-panel">';
+			
 			// Use an if statement to conditionally display the site logo
-			if (!empty($settings['elementskit_nav_menu_logo']['id'])) : 
-				$markup .= '
-				<div class="elementskit-site-title">
-					<a class="elementskit-nav-logo" href="'.esc_url($link).'" target="'.(!empty($target) ? esc_attr($target) : '_self').'" rel="'.esc_attr($nofollow).'">
-						'. \Elementskit_Lite\Utils::get_attachment_image_html($settings, 'elementskit_nav_menu_logo', 'full') .'
-					</a> 
-				</div>';
+			$ekit_nav_menu_logo = !empty($settings['elementskit_nav_menu_logo']) ? $settings['elementskit_nav_menu_logo'] : [];
+			if (!empty($ekit_nav_menu_logo['id'])) :
+				// $nav_logo_html = \Elementskit_Lite\Utils::get_attachment_image_html($settings, 'elementskit_nav_menu_logo', 'full');
+
+				$nav_logo_html = sprintf(
+					'<img src="%s" title="%s" alt="%s" decoding="async" />',
+					esc_url($ekit_nav_menu_logo['url']),
+					Control_Media::get_image_title($ekit_nav_menu_logo),
+					Control_Media::get_image_alt($ekit_nav_menu_logo)
+				);
+
+				$markup .= sprintf(
+					'<a class="elementskit-nav-logo" href="%1$s" target="%2$s" rel="%3$s">%4$s</a>',
+					esc_url($link),
+					esc_attr($target),
+					esc_attr($nofollow),
+					$nav_logo_html
+				);
 			endif;
+
 			$markup .= '<button class="elementskit-menu-close elementskit-menu-toggler" type="button">X</button></div>';
-		
 
 			$container_classes = [
 				'elementskit-menu-container elementskit-menu-offcanvas-elements elementskit-navbar-nav-default',

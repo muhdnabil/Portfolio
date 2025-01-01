@@ -59,6 +59,10 @@ class Advanced_Data_Table extends Widget_Base
         ];
     }
 
+    public function has_widget_inner_wrapper(): bool {
+        return ! Helper::eael_e_optimized_markup();
+    }
+
     public function get_custom_help_url()
     {
         return 'https://essential-addons.com/elementor/docs/advanced-data-table/';
@@ -1559,7 +1563,7 @@ class Advanced_Data_Table extends Widget_Base
             }
 
             echo '<div class="ea-advanced-data-table-wrap-inner">
-                <table '; $this->print_render_attribute_string('ea-adv-data-table'); echo '>' . wp_kses( $content, Helper::eael_allowed_tags() ) . '</table>
+                <table '; $this->print_render_attribute_string('ea-adv-data-table'); echo '>' . wp_kses( $content, Helper::eael_allowed_tags(), Helper::eael_allowed_protocols() ) . '</table>
             </div>';
 
             if ($settings['ea_adv_data_table_pagination'] == 'yes') {

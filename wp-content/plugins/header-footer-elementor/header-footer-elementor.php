@@ -1,25 +1,26 @@
 <?php
 /**
- * Plugin Name: Elementor Header & Footer Builder
- * Plugin URI:  https://github.com/Nikschavan/header-footer-elementor
- * Description: This powerful plugin allows creating a custom header, footer with Elementor and display them on selected locations. You can also create custom Elementor blocks and place them anywhere on the website with a shortcode.
- * Author:      Brainstorm Force, Nikhil Chavan
+ * Plugin Name: Ultimate Addons for Elementor Lite
+ * Plugin URI:  https://wordpress.org/plugins/header-footer-elementor/
+ * Description: Formerly known as "Elementor Header & Footer Builder", this powerful plugin allows you to create custom headers and footers with Elementor and display them in selected locations. You can also create custom Elementor blocks and place them anywhere on your website using a shortcode.
+ * Author:      Brainstorm Force
  * Author URI:  https://www.brainstormforce.com/
  * Text Domain: header-footer-elementor
  * Domain Path: /languages
- * Version: 1.6.42
- * Elementor tested up to: 3.24
- * Elementor Pro tested up to: 3.24
+ * Version: 2.0.5
+ * Elementor tested up to: 3.26
+ * Elementor Pro tested up to: 3.26
  *
  * @package         header-footer-elementor
  */
 
-define( 'HFE_VER', '1.6.42' );
+define( 'HFE_VER', '2.0.5' );
 define( 'HFE_FILE', __FILE__ );
 define( 'HFE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HFE_URL', plugins_url( '/', __FILE__ ) );
 define( 'HFE_PATH', plugin_basename( __FILE__ ) );
 define( 'HFE_DOMAIN', trailingslashit( 'https://ultimateelementor.com' ) );
+define( 'UAE_LITE', true );
 
 /**
  * Load the class loader.
@@ -47,3 +48,51 @@ function hfe_init() {
 }
 
 add_action( 'plugins_loaded', 'hfe_init' );
+
+/** Function for FA5, Social Icons, Icon List */
+function hfe_enqueue_font_awesome() {
+
+	if ( class_exists( 'Elementor\Plugin' ) ) {
+		
+		wp_enqueue_style(
+			'hfe-icons-list',
+			plugins_url( '/elementor/assets/css/widget-icon-list.min.css', 'elementor' ),
+			[],
+			'3.24.3'
+		);
+		wp_enqueue_style(
+			'hfe-social-icons',
+			plugins_url( '/elementor/assets/css/widget-social-icons.min.css', 'elementor' ),
+			[],
+			'3.24.0'
+		);
+		wp_enqueue_style(
+			'hfe-social-share-icons-brands',
+			plugins_url( '/elementor/assets/lib/font-awesome/css/brands.css', 'elementor' ),
+			[],
+			'5.15.3'
+		);
+
+		wp_enqueue_style(
+			'hfe-social-share-icons-fontawesome',
+			plugins_url( '/elementor/assets/lib/font-awesome/css/fontawesome.css', 'elementor' ),
+			[],
+			'5.15.3'
+		);
+		wp_enqueue_style(
+			'hfe-nav-menu-icons',
+			plugins_url( '/elementor/assets/lib/font-awesome/css/solid.css', 'elementor' ),
+			[],
+			'5.15.3'
+		);
+	}
+	if ( class_exists( '\ElementorPro\Plugin' ) ) {
+		wp_enqueue_style(
+			'hfe-widget-blockquote',
+			plugins_url( '/elementor-pro/assets/css/widget-blockquote.min.css', 'elementor' ),
+			[],
+			'3.25.0'
+		);
+	}
+}
+add_action( 'wp_enqueue_scripts', 'hfe_enqueue_font_awesome', 20 );

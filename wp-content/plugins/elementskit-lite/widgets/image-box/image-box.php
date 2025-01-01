@@ -39,6 +39,10 @@ class ElementsKit_Widget_Image_Box extends Widget_Base {
         return false;
     }
 
+	public function has_widget_inner_wrapper(): bool {
+		return ! Plugin::$instance->experiments->is_feature_active( 'e_optimized_markup' );
+	}
+
     protected function register_controls() {
 
         // start content section for set Image
@@ -105,7 +109,9 @@ class ElementsKit_Widget_Image_Box extends Widget_Base {
                 'default'   => 'disable',
                 'prefix_class'  => 'ekit-equal-height-',
                 'selectors' => [
-					'{{WRAPPER}}.ekit-equal-height-enable, {{WRAPPER}}.ekit-equal-height-enable .elementor-widget-container, {{WRAPPER}}.ekit-equal-height-enable .ekit-wid-con, {{WRAPPER}}.ekit-equal-height-enable .ekit-wid-con .elementskit-info-image-box' => 'height: 100%;',
+					'{{WRAPPER}}.ekit-equal-height-enable,
+					{{WRAPPER}}.ekit-equal-height-enable .ekit-wid-con,
+					{{WRAPPER}}.ekit-equal-height-enable .ekit-wid-con .elementskit-info-image-box' => 'height: 100%;',
                 ],
                 'condition' => [
                     'ekit_image_box_style_simple!'   => 'floating-style'

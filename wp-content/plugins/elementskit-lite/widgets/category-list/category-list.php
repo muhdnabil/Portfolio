@@ -34,9 +34,14 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
     public function get_help_url() {
         return 'https://wpmet.com/doc/category-list/';
     }
+
     protected function is_dynamic_content(): bool {
         return false;
     }
+
+	public function has_widget_inner_wrapper(): bool {
+		return ! Plugin::$instance->experiments->is_feature_active( 'e_optimized_markup' );
+	}
 
 	protected function register_controls() {
 		$this->start_controls_section(
@@ -355,8 +360,7 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-icon i' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .elementor-icon-list-icon svg path'	=> 'stroke: {{VALUE}}; fill: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon-list-icon' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -368,8 +372,7 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-item:hover .elementor-icon-list-icon i' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .elementor-icon-list-item:hover .elementor-icon-list-icon svg path'	=> 'stroke: {{VALUE}}; fill: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon-list-item:hover .elementor-icon-list-icon' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -388,8 +391,7 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-icon' => 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .elementor-icon-list-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-icon-list-icon' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -489,12 +491,11 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 					<a href="<?php echo esc_url(get_category_link($post->term_id)); ?>" <?php echo $this->get_render_attribute_string('list_bg_' . $index); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already escaped by elementor ?>>
                         <?php if (!empty($item['icons']['value'])) : ?>
                             <span class="elementor-icon-list-icon">
-								<?php Icons_Manager::render_icon( $item['icons'], [ 'aria-hidden' => 'true' ] ); ?>
+								<?php Icons_Manager::render_icon($item['icons'], [ 'aria-hidden' => 'true' ]); ?>
                             </span>
                         <?php endif; ?>
                         <span class="elementor-icon-list-text"><?php echo esc_html($text); ?></span>
 					</a>
-
 				</li>
 				<?php
                 endif;
@@ -503,6 +504,4 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 		</ul>
 		<?php
 	}
-
-
 }

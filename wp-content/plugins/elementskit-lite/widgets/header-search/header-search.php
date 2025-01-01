@@ -40,9 +40,14 @@ class ElementsKit_Widget_Header_Search extends Widget_Base
     public function get_help_url() {
         return 'https://wpmet.com/doc/search-2/';
     }
+
     protected function is_dynamic_content(): bool {
         return false;
     }
+
+	public function has_widget_inner_wrapper(): bool {
+		return ! Plugin::$instance->experiments->is_feature_active( 'e_optimized_markup' );
+	}
 
     protected function register_controls()
     {
@@ -379,6 +384,15 @@ class ElementsKit_Widget_Header_Search extends Widget_Base
 			]
         );
 
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'ekit_search_input_typography',
+                'label' => esc_html__( 'Typography', 'elementskit-lite' ),
+                'exclude' => [ 'line_height', 'text_decoration', 'text_transform', 'font_style' ],
+                'selector' => '{{WRAPPER}} .ekit_modal-searchPanel .ekit_search-field',
+            ]
+        );
         $this->add_control(
 			'ekit_search_border_heading',
 			[
@@ -447,6 +461,26 @@ class ElementsKit_Widget_Header_Search extends Widget_Base
 				],
 			]
 		);
+
+        $this->add_control(
+            'ekit_search_input_icon_size',
+            [
+                'label' => esc_html__('Icon Size (px)', 'elementskit-lite'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 10,
+                        'max' => 150,
+                        'step' => 1,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ekit_modal-searchPanel .ekit-search-group .ekit_search-button i, 
+                    {{WRAPPER}} .ekit_modal-searchPanel .ekit-search-group .ekit_search-button svg' => 'font-size: {{SIZE}}{{UNIT}}; max-width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
 
         $this->add_control(
 			'ekit_search_input_left',

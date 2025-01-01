@@ -39,9 +39,18 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
     public function get_help_url() {
         return 'https://wpmet.com/doc/client-logo/';
     }
+
+	public function get_style_depends() {
+		return ['swiper'];
+	}
+
     protected function is_dynamic_content(): bool {
         return false;
     }
+
+	public function has_widget_inner_wrapper(): bool {
+		return ! Plugin::$instance->experiments->is_feature_active( 'e_optimized_markup' );
+	}
 
     protected function register_controls() {
 
@@ -196,29 +205,21 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
 				'label' => esc_html__( 'Spacing Left Right', 'elementskit-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
+				'default' => [
+					'size' => 15,
+				],
+				'tablet_default' => [
+					'size' => 10,
+				],
+				'mobile_default' => [
+					'size' => 10,
+				],
 				'range' => [
 					'px' => [
 						'min' => 0,
 						'max' => 50,
 						'step' => 1,
 					],
-				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
-				'desktop_default' => [
-					'size' => 15,
-					'unit' => 'px',
-				],
-				'tablet_default' => [
-					'size' => 10,
-					'unit' => 'px',
-				],
-				'mobile_default' => [
-					'size' => 10,
-					'unit' => 'px',
-				],
-				'default' => [
-					'size' => 15,
-					'unit' => 'px',
 				],
 				'render_type' => 'template',
 				'selectors' => [
@@ -1161,29 +1162,21 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
 				'label' => esc_html__( 'Spacing Left Right', 'elementskit-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
+				'default' => [
+					'size' => 8,
+				],
+				'tablet_default' => [
+					'size' => 10,
+				],
+				'mobile_default' => [
+					'size' => 10,
+				],
 				'range' => [
 					'px' => [
 						'min' => 0,
 						'max' => 1000,
 						'step' => 1,
 					],
-				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
-				'desktop_default' => [
-					'size' => 8,
-					'unit' => 'px',
-				],
-				'tablet_default' => [
-					'size' => 10,
-					'unit' => 'px',
-				],
-				'mobile_default' => [
-					'size' => 10,
-					'unit' => 'px',
-				],
-				'default' => [
-					'size' => 8,
-					'unit' => 'px',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementskit-clients-slider .swiper-pagination > span' => 'margin-right: {{SIZE}}{{UNIT}};margin-left: {{SIZE}}{{UNIT}};',
@@ -1533,24 +1526,6 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
         $settings = $this->get_settings_for_display();
         extract($settings);
         $logos = $settings['ekit_client_logo_repiter'];
-        
-		// Left Arrow Icon
-		$prevArrowIcon = '';
-		if (isset($settings['__fa4_migrated']['ekit_client_logo_left_arrow_icon'])) {
-			$prevArrowIcon = Icons_Manager::try_get_icon_html($settings['ekit_client_logo_left_arrow_icon'], ['aria-hidden' => 'true']);
-		} else {
-			$is_new = empty($settings['ekit_client_logo_left_arrow']) && Icons_Manager::is_migration_allowed();
-			$prevArrowIcon = $is_new ? Icons_Manager::try_get_icon_html($settings['ekit_client_logo_left_arrow_icon'], ['aria-hidden' => 'true']) : '';
-		}
-
-		// Right Arrow Icon
-		$nextArrowIcon = '';
-		if (isset($settings['__fa4_migrated']['ekit_client_logo_right_arrow_icon'])) {
-			$nextArrowIcon = Icons_Manager::try_get_icon_html($settings['ekit_client_logo_right_arrow_icon'], ['aria-hidden' => 'true']);
-		} else {
-			$is_new = empty($settings['ekit_client_logo_right_arrow']) && Icons_Manager::is_migration_allowed();
-			$nextArrowIcon = $is_new ? Icons_Manager::try_get_icon_html($settings['ekit_client_logo_right_arrow_icon'], ['aria-hidden' => 'true']) : '';
-		}
 
         // Config
         $config = [
@@ -1677,10 +1652,10 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
 
 				<?php if(!empty($settings['ekit_client_logo_show_arrow'])) : ?>
 					<div class="swiper-navigation-button swiper-button-prev">
-						<?php echo wp_kses($prevArrowIcon, \ElementsKit_Lite\Utils::get_kses_array()); ?>
+						<?php Icons_Manager::render_icon($settings['ekit_client_logo_left_arrow_icon'], [ 'aria-hidden' => 'true' ]); ?>
 					</div>
 					<div class="swiper-navigation-button swiper-button-next">
-						<?php echo wp_kses($nextArrowIcon, \ElementsKit_Lite\Utils::get_kses_array()); ?>
+						<?php Icons_Manager::render_icon($settings['ekit_client_logo_right_arrow_icon'], [ 'aria-hidden' => 'true' ]); ?>
 					</div>
 				<?php endif; ?>
 			</div><!-- .elementskit-clients-slider END -->
