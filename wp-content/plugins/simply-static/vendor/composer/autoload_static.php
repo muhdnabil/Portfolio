@@ -39,8 +39,8 @@ class ComposerStaticInit2b45eeee88c4cd1d52f1a6f7508bc287
         ),
         'voku\\' => 
         array (
-            0 => __DIR__ . '/..' . '/voku/portable-utf8/src/voku',
-            1 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+            0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+            1 => __DIR__ . '/..' . '/voku/portable-utf8/src/voku',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (

@@ -3,7 +3,7 @@
         'name' => 'simplystatic/simply-static',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '2023b6aefda72c498b9663f5469c1c11da6ecc66',
+        'reference' => '83da0bf69fcda8e17b507550606fa5e138082a61',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'deliciousbrains/wp-background-processing' => array(
-            'pretty_version' => '1.4.0',
-            'version' => '1.4.0.0',
-            'reference' => '7ca7cc3504333db3a291bbab7f1917124fba4816',
+            'pretty_version' => '1.3.1',
+            'version' => '1.3.1.0',
+            'reference' => '6d1e48165e461260075b9f161b3861c7278f71e7',
             'type' => 'library',
             'install_path' => __DIR__ . '/../deliciousbrains/wp-background-processing',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'simplystatic/simply-static' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '2023b6aefda72c498b9663f5469c1c11da6ecc66',
+            'reference' => '83da0bf69fcda8e17b507550606fa5e138082a61',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
