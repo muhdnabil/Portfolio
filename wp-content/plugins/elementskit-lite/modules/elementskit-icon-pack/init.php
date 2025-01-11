@@ -14,7 +14,12 @@ class Init {
 	}
 
 	public function __construct() {
+		add_action('elementor/frontend/before_enqueue_scripts', array($this, 'enqueue_frontend'));
 		add_filter('elementor/icons_manager/additional_tabs', array($this, 'register_icon_pack_to_elementor'));
+	}
+
+	public function enqueue_frontend() {
+		wp_enqueue_style( 'elementor-icons-ekiticons', self::get_url() . 'assets/css/ekiticons.css', array(), \ElementsKit_Lite::version() );
 	}
 
 	public function register_icon_pack_to_elementor($font) {

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'HELLO_ELEMENTOR_VERSION', '3.1.1' );
+define( 'HELLO_ELEMENTOR_VERSION', '3.2.1' );
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 800; // Pixels.
@@ -60,16 +60,14 @@ if ( ! function_exists( 'hello_elementor_setup' ) ) {
 					'flex-width'  => true,
 				]
 			);
-
-			/*
-			 * Editor Style.
-			 */
-			add_editor_style( 'classic-editor.css' );
-
-			/*
-			 * Gutenberg wide images.
-			 */
 			add_theme_support( 'align-wide' );
+			add_theme_support( 'responsive-embeds' );
+
+			/*
+			 * Editor Styles
+			 */
+			add_theme_support( 'editor-styles' );
+			add_editor_style( 'editor-styles.css' );
 
 			/*
 			 * WooCommerce.

@@ -38,6 +38,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
     public function get_help_url() {
         return 'https://wpmet.com/doc/nav-menu/';
     }
+
     protected function is_dynamic_content(): bool {
         return true;
     }
@@ -157,11 +158,23 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
             'elementskit_one_page_enable',
             [
                 'label' => esc_html__('Enable one page? ', 'elementskit-lite'),
-                'description'	=> esc_html__('This works in the current page.', 'elementskit-lite'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'no',
                 'label_on' =>esc_html__( 'Yes', 'elementskit-lite' ),
                 'label_off' =>esc_html__( 'No', 'elementskit-lite' ),
+            ]
+        );
+
+        $this->add_control(
+            'elementskit_one_page_notice',
+            [
+                'type' => Controls_Manager::NOTICE,
+                'notice_type' => 'warning',
+                'heading' => esc_html__('Enable OnePage Notice', 'elementskit-lite'),
+                'content' => esc_html__('This feature only works on the current page. Ensure that the links in your menu are pointing to sections within the same page for the one-page navigation correctly.', 'elementskit-lite'),
+                'condition' => [
+                    'elementskit_one_page_enable' => 'yes',
+                ],
             ]
         );
 
@@ -1632,13 +1645,11 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
                 $nofollow = ($settings['elementskit_nav_menu_logo_link']['nofollow'] != "on" ? "" : "nofollow");
             }
 
-            $metadata = \ElementsKit_Lite\Utils::img_meta(esc_attr($settings['elementskit_nav_menu_logo']['id']));
-
 			$markup = '<div class="elementskit-nav-identity-panel">';
 			
 			// Use an if statement to conditionally display the site logo
 			$ekit_nav_menu_logo = !empty($settings['elementskit_nav_menu_logo']) ? $settings['elementskit_nav_menu_logo'] : [];
-			if (!empty($ekit_nav_menu_logo['id'])) :
+			if (!empty($ekit_nav_menu_logo['id']) && !empty($ekit_nav_menu_logo['url'])) :
 				// $nav_logo_html = \Elementskit_Lite\Utils::get_attachment_image_html($settings, 'elementskit_nav_menu_logo', 'full');
 
 				$nav_logo_html = sprintf(

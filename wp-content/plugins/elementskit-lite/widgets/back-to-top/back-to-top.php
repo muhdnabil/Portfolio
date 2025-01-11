@@ -469,7 +469,7 @@ class ElementsKit_Widget_Back_To_Top extends Widget_Base {
 				'style' => $appearance,
 				'foreground' => $settings['ekit_button_prgoress_foreground'],
 				'background' => $settings['ekit_button_prgoress_background']
-		]
+		];
 		?>
 			<div class="ekit-back-to-top-container ekit-btt <?php echo esc_attr( $appearance ) ?>" data-settings="<?php echo esc_attr( wp_json_encode($args) ) ?>"> 
 				<span class="ekit-btt__button <?php echo esc_attr( $is_scroll ) ?>">

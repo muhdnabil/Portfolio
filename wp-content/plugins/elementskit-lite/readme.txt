@@ -4,7 +4,7 @@ Tags: Elementor addons, mega menu builder,  header footer builder, elementor add
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 3.3.6
+Stable tag: 3.3.7
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -341,6 +341,11 @@ If you like using ElementsKit Elementor addon, then consider checking out our ot
 Visit  [wpmet](https://wpmet.com/)  to learn more about how to get the best of WordPress with  [Tutorials, Tips & Tricks](https://wpmet.com/blog)!
 
 == Changelog ==
+ElementsKit Elementor Addons Version: 3.3.7 (2025-01-06)
+Fixed: Visibility issue with nav menu indicator icon
+Fixed: Text not centering when use custom width in button widget
+Fixed: One page navigation issue in nav menu widget
+
 ElementsKit Elementor Addons Version: 3.3.6 (2024-12-31)
 Fixed: WPML compatibility issue with URLs in all widgets
 Fixed: Fatal error in category list widget

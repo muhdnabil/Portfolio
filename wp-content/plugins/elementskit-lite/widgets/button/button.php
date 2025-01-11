@@ -137,6 +137,7 @@ class ElementsKit_Widget_Button extends Widget_Base {
 			[
 				'label' =>esc_html__( 'Alignment', 'elementskit-lite' ),
 				'type' => Controls_Manager::CHOOSE,
+				'default' => 'center',
 				'options' => [
 					'left'    => [
 						'title' =>esc_html__( 'Left', 'elementskit-lite' ),
@@ -151,9 +152,14 @@ class ElementsKit_Widget_Button extends Widget_Base {
 						'icon' => 'eicon-text-align-right',
 					],
 				],
-				'default' => 'center',
+				'selectors_dictionary' => [
+					'left' => 'justify-content: flex-start;',
+					'center' => 'justify-content: center;',
+					'right' => 'justify-content: flex-end;',
+				],
+				'prefix_class' => 'elementor-align-%s',
 				'selectors' => [
-					'{{WRAPPER}} .ekit-btn-wraper' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .ekit-btn-wraper .elementskit-btn' => '{{VALUE}};',
 				],
 			]
 		);
