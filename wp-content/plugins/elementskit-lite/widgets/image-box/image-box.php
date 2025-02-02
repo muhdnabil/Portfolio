@@ -108,8 +108,10 @@ class ElementsKit_Widget_Image_Box extends Widget_Base {
                 ],
                 'default'   => 'disable',
                 'prefix_class'  => 'ekit-equal-height-',
+				// TODO: Remove this line `{{WRAPPER}}.ekit-equal-height-enable > div` condition after the `Optimized Markup` feature is stable
                 'selectors' => [
 					'{{WRAPPER}}.ekit-equal-height-enable,
+					{{WRAPPER}}.ekit-equal-height-enable > div,
 					{{WRAPPER}}.ekit-equal-height-enable .ekit-wid-con,
 					{{WRAPPER}}.ekit-equal-height-enable .ekit-wid-con .elementskit-info-image-box' => 'height: 100%;',
                 ],

@@ -35,6 +35,10 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
         return 'https://wpmet.com/doc/category-list/';
     }
 
+	public function get_style_depends(): array {
+		return [ 'widget-icon-list' ];
+	}
+
     protected function is_dynamic_content(): bool {
         return false;
     }
@@ -360,7 +364,7 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon-list-icon' => 'color: {{VALUE}}; fill: {{VALUE}};',
 				],
 			]
 		);
@@ -372,7 +376,7 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-item:hover .elementor-icon-list-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon-list-item:hover .elementor-icon-list-icon' => 'color: {{VALUE}}; fill: {{VALUE}};',
 				],
 			]
 		);
@@ -413,7 +417,7 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon-list-item a' => 'color: {{VALUE}}; fill: {{VALUE}};',
 				],
 			]
 		);
@@ -425,7 +429,7 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-item:hover .elementor-icon-list-text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon-list-item:hover a' => 'color: {{VALUE}}; fill: {{VALUE}};',
 				],
 			]
 		);

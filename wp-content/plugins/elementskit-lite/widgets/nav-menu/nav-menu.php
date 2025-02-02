@@ -1686,8 +1686,15 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
 				'depth'           => 4,
 				'echo'            => true,
 				'fallback_cb'     => 'wp_page_menu',
-				'walker'          => (class_exists('\ElementsKit_Lite\ElementsKit_Menu_Walker') ? new \ElementsKit_Lite\ElementsKit_Menu_Walker() : '' )
 			];
+
+			// set walker conditionally if mega menu module is active or not
+			if(class_exists('\ElementsKit_Lite\ElementsKit_Menu_Walker')) {
+				$args['walker'] = new \ElementsKit_Lite\ElementsKit_Menu_Walker();
+			} else {
+				include dirname(__FILE__) . '/nav-menu-walker.php';
+				$args['walker'] = new \ElementsKit_Lite\ElementsKit_Seconday_Menu_Walker();
+			}
 
 			// set submenu indicator icon
 			$args['submenu_indicator_icon'] = $this->get_indicator_icon($settings);

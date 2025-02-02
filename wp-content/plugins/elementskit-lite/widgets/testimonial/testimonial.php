@@ -2400,6 +2400,9 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 		extract($settings);
 
+		// Set default client image size
+		$ekit_testimonial_client_image_size = isset($ekit_testimonial_client_image_size) ? $ekit_testimonial_client_image_size : ['size' => 70];
+
 		$slides_to_show_count = $ekit_testimonial_slidetoshow ? $ekit_testimonial_slidetoshow : 1;
 		$slides_to_scroll_count = $ekit_testimonial_slidesToScroll ? $ekit_testimonial_slidesToScroll : 1;
 
