@@ -4,7 +4,7 @@ Tags: Elementor addons, mega menu builder,  header footer builder, elementor add
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 3.4.0
+Stable tag: 3.4.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -346,6 +346,24 @@ If you like using ElementsKit Elementor addon, then consider checking out our ot
 Visit  [wpmet](https://wpmet.com/)  to learn more about how to get the best of WordPress with  [Tutorials, Tips & Tricks](https://wpmet.com/blog)!
 
 == Changelog ==
+ElementsKit Elementor Addons Version: 3.4.4 (2025-02-16)
+Improved: Submenu indicators styling controls in nav menu widget
+Improved: Countdown timer widget sanitization and escaping
+
+ElementsKit Elementor Addons Version: 3.4.3 (2025-02-12)
+Improved: Countdown timer widget sanitization and escaping
+
+ElementsKit Elementor Addons Version: 3.4.2 (2025-02-10)
+Fixed: Fatal error cannot redeclare walker class of nav menu widget
+
+ElementsKit Elementor Addons Version: 3.4.1 (2025-02-09)
+Added: URL validation method to ensure only valid protocols are used for links
+Fixed: Megamenu content retrieval to check for published status
+Fixed: Header search popup not showing correctly when use video widget
+Fixed: Ensure default value is an array when retrieving options
+Improved: Enhance image rendering logic and clean up client logo widget markup
+Improved: PCP warnings and errors
+
 ElementsKit Elementor Addons Version: 3.4.0 (2025-01-27)
 Fixed: Submenu broken when mega menu module is deactivate in nav menu widget
 Fixed: Equal height feature is not working in icon and image box widget

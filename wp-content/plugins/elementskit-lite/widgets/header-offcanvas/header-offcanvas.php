@@ -878,7 +878,7 @@ class ElementsKit_Widget_Header_Offcanvas extends Widget_Base
         </div>
         <!-- offset cart strart -->
         <!-- sidebar cart item -->
-        <div class="ekit-sidebar-group info-group <?php echo esc_attr($settings['ekit_header_search_style']); ?>" data-settings="<?php echo esc_attr( json_encode($data_settings)); ?>">
+        <div class="ekit-sidebar-group info-group <?php echo esc_attr($settings['ekit_header_search_style']); ?>" data-settings="<?php echo esc_attr( wp_json_encode($data_settings)); ?>">
             <div class="ekit-overlay ekit-bg-black"></div>
             <div class="ekit-sidebar-widget">
                 <div class="ekit_sidebar-widget-container">

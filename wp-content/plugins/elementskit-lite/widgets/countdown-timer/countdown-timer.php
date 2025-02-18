@@ -1791,8 +1791,8 @@ class ElementsKit_Widget_Countdown_Timer extends Widget_Base {
 		}
 
 		$this->add_render_attribute('ekit_countdown_timer', [
-			'data-finish-title' => wp_strip_all_tags($ekit_countdown_timer_title),
-			'data-finish-content' => wp_strip_all_tags($ekit_countdown_timer_expiry_content),
+			'data-finish-title' => esc_attr(wp_strip_all_tags($ekit_countdown_timer_title)),
+			'data-finish-content' => esc_attr(wp_strip_all_tags($ekit_countdown_timer_expiry_content)),
 		]);
 
 		switch ( $ekit_countdown_timer_style ) {

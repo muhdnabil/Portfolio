@@ -1,10 +1,10 @@
 # Copyright (C) 2025 Wpmet
-# This file is distributed under the same license as the ElementsKit Lite package.
+# This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ElementsKit Lite 3.4.0\n"
+"Project-Id-Version: ElementsKit Lite 3.4.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/elementskit-lite\n"
-"POT-Creation-Date: 2025-01-27 05:32:35+00:00\n"
+"POT-Creation-Date: 2025-02-16 10:06:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,35 +41,35 @@ msgstr ""
 msgid "6"
 msgstr ""
 
-#: elementskit-lite.php:375
+#: elementskit-lite.php:377
 msgid "Activate Elementor"
 msgstr ""
 
-#: elementskit-lite.php:378
+#: elementskit-lite.php:380
 msgid "Install Elementor"
 msgstr ""
 
-#: elementskit-lite.php:385
+#: elementskit-lite.php:387
 msgid "ElementsKit requires Elementor version"
 msgstr ""
 
-#: elementskit-lite.php:387
+#: elementskit-lite.php:389
 msgid "which is currently NOT RUNNING."
 msgstr ""
 
-#: elementskit-lite.php:405
+#: elementskit-lite.php:407
 msgid "ElementsKit requires PHP version"
 msgstr ""
 
-#: elementskit-lite.php:407
+#: elementskit-lite.php:409
 msgid "which is currently NOT RUNNING on this server."
 msgstr ""
 
-#: elementskit-lite.php:434 libs/framework/views/onboard-steps/step-05.php:8
+#: elementskit-lite.php:436 libs/framework/views/onboard-steps/step-05.php:8
 msgid "ElementsKit"
 msgstr ""
 
-#: elementskit-lite.php:442
+#: elementskit-lite.php:444
 msgid "ElementsKit Header Footer"
 msgstr ""
 
@@ -1126,7 +1126,7 @@ msgstr ""
 #: widgets/client-logo/client-logo.php:1296
 #: widgets/fluent-forms/fluent-forms.php:1700
 #: widgets/fluent-forms/fluent-forms.php:1899 widgets/nav-menu/nav-menu.php:585
-#: widgets/nav-menu/nav-menu.php:855 widgets/post-tab/post-tab.php:282
+#: widgets/nav-menu/nav-menu.php:905 widgets/post-tab/post-tab.php:282
 #: widgets/tab/tab.php:829 widgets/testimonial/testimonial.php:823
 #: widgets/testimonial/testimonial.php:1226
 #: widgets/testimonial/testimonial.php:2005
@@ -1362,6 +1362,10 @@ msgstr ""
 
 #: modules/megamenu/views/options-menu-item.php:28
 msgid "Megamenu disabled"
+msgstr ""
+
+#: modules/megamenu/views/options-menu-item.php:34
+msgid "elementskit megamenu"
 msgstr ""
 
 #: modules/megamenu/views/options-menu-item.php:35
@@ -1705,7 +1709,7 @@ msgstr ""
 #: widgets/header-search/header-search.php:523 widgets/heading/heading.php:374
 #: widgets/icon-box/icon-box.php:382 widgets/icon-box/icon-box.php:735
 #: widgets/image-accordion/image-accordion.php:589
-#: widgets/nav-menu/nav-menu.php:1063 widgets/page-list/page-list.php:579
+#: widgets/nav-menu/nav-menu.php:1113 widgets/page-list/page-list.php:579
 #: widgets/page-list/page-list.php:593 widgets/page-list/page-list.php:959
 #: widgets/post-list/post-list.php:378 widgets/post-list/post-list.php:774
 #: widgets/pricing/pricing.php:1499 widgets/pricing/pricing.php:1569
@@ -2294,25 +2298,25 @@ msgstr ""
 #: widgets/image-box/image-box.php:1478 widgets/mail-chimp/mail-chimp.php:671
 #: widgets/mail-chimp/mail-chimp.php:1043
 #: widgets/mail-chimp/mail-chimp.php:1075
-#: widgets/mail-chimp/mail-chimp.php:1185 widgets/nav-menu/nav-menu.php:1187
-#: widgets/nav-menu/nav-menu.php:1229 widgets/nav-menu/nav-menu.php:1388
-#: widgets/nav-menu/nav-menu.php:1429 widgets/page-list/page-list.php:81
-#: widgets/page-list/page-list.php:207 widgets/page-list/page-list.php:383
-#: widgets/page-list/page-list.php:619 widgets/piechart/piechart.php:375
-#: widgets/piechart/piechart.php:593 widgets/piechart/piechart.php:612
-#: widgets/post-list/post-list.php:452 widgets/post-list/post-list.php:504
-#: widgets/post-list/post-list.php:796 widgets/post-tab/post-tab.php:141
-#: widgets/post-tab/post-tab.php:240 widgets/post-tab/post-tab.php:301
-#: widgets/progressbar/progressbar.php:173 widgets/tab/tab.php:572
-#: widgets/tab/tab.php:786 widgets/tab/tab.php:858 widgets/tab/tab.php:1033
-#: widgets/tab/tab.php:1154 widgets/tab/tab.php:1314 widgets/tab/tab.php:1598
-#: widgets/tab/tab.php:1622 widgets/tab/tab.php:1838 widgets/tab/tab.php:1862
-#: widgets/tablepress/tablepress.php:313 widgets/tablepress/tablepress.php:500
-#: widgets/tablepress/tablepress.php:547 widgets/tablepress/tablepress.php:634
-#: widgets/team/team.php:571 widgets/team/team.php:596
-#: widgets/team/team.php:782 widgets/team/team.php:959
-#: widgets/team/team.php:1814 widgets/team/team.php:1848
-#: widgets/testimonial/testimonial.php:453
+#: widgets/mail-chimp/mail-chimp.php:1185 widgets/nav-menu/nav-menu.php:725
+#: widgets/nav-menu/nav-menu.php:1237 widgets/nav-menu/nav-menu.php:1279
+#: widgets/nav-menu/nav-menu.php:1438 widgets/nav-menu/nav-menu.php:1479
+#: widgets/page-list/page-list.php:81 widgets/page-list/page-list.php:207
+#: widgets/page-list/page-list.php:383 widgets/page-list/page-list.php:619
+#: widgets/piechart/piechart.php:375 widgets/piechart/piechart.php:593
+#: widgets/piechart/piechart.php:612 widgets/post-list/post-list.php:452
+#: widgets/post-list/post-list.php:504 widgets/post-list/post-list.php:796
+#: widgets/post-tab/post-tab.php:141 widgets/post-tab/post-tab.php:240
+#: widgets/post-tab/post-tab.php:301 widgets/progressbar/progressbar.php:173
+#: widgets/tab/tab.php:572 widgets/tab/tab.php:786 widgets/tab/tab.php:858
+#: widgets/tab/tab.php:1033 widgets/tab/tab.php:1154 widgets/tab/tab.php:1314
+#: widgets/tab/tab.php:1598 widgets/tab/tab.php:1622 widgets/tab/tab.php:1838
+#: widgets/tab/tab.php:1862 widgets/tablepress/tablepress.php:313
+#: widgets/tablepress/tablepress.php:500 widgets/tablepress/tablepress.php:547
+#: widgets/tablepress/tablepress.php:634 widgets/team/team.php:571
+#: widgets/team/team.php:596 widgets/team/team.php:782
+#: widgets/team/team.php:959 widgets/team/team.php:1814
+#: widgets/team/team.php:1848 widgets/testimonial/testimonial.php:453
 #: widgets/testimonial/testimonial.php:744
 #: widgets/testimonial/testimonial.php:777
 #: widgets/testimonial/testimonial.php:831
@@ -2454,10 +2458,10 @@ msgstr ""
 #: widgets/mail-chimp/mail-chimp.php:694 widgets/mail-chimp/mail-chimp.php:948
 #: widgets/mail-chimp/mail-chimp.php:1241
 #: widgets/mail-chimp/mail-chimp.php:1354
-#: widgets/mail-chimp/mail-chimp.php:1390 widgets/nav-menu/nav-menu.php:898
-#: widgets/nav-menu/nav-menu.php:1197 widgets/nav-menu/nav-menu.php:1239
-#: widgets/nav-menu/nav-menu.php:1398 widgets/nav-menu/nav-menu.php:1439
-#: widgets/ninja-forms/ninja-forms.php:354
+#: widgets/mail-chimp/mail-chimp.php:1390 widgets/nav-menu/nav-menu.php:736
+#: widgets/nav-menu/nav-menu.php:948 widgets/nav-menu/nav-menu.php:1247
+#: widgets/nav-menu/nav-menu.php:1289 widgets/nav-menu/nav-menu.php:1448
+#: widgets/nav-menu/nav-menu.php:1489 widgets/ninja-forms/ninja-forms.php:354
 #: widgets/ninja-forms/ninja-forms.php:489
 #: widgets/ninja-forms/ninja-forms.php:722 widgets/page-list/page-list.php:353
 #: widgets/post-list/post-list.php:462 widgets/post-list/post-list.php:514
@@ -2547,9 +2551,9 @@ msgstr ""
 #: widgets/image-comparison/image-comparison.php:583
 #: widgets/mail-chimp/mail-chimp.php:681 widgets/mail-chimp/mail-chimp.php:908
 #: widgets/mail-chimp/mail-chimp.php:1261
-#: widgets/mail-chimp/mail-chimp.php:1307 widgets/nav-menu/nav-menu.php:989
-#: widgets/nav-menu/nav-menu.php:1125 widgets/nav-menu/nav-menu.php:1348
-#: widgets/ninja-forms/ninja-forms.php:365
+#: widgets/mail-chimp/mail-chimp.php:1307 widgets/nav-menu/nav-menu.php:745
+#: widgets/nav-menu/nav-menu.php:1039 widgets/nav-menu/nav-menu.php:1175
+#: widgets/nav-menu/nav-menu.php:1398 widgets/ninja-forms/ninja-forms.php:365
 #: widgets/ninja-forms/ninja-forms.php:732 widgets/page-list/page-list.php:361
 #: widgets/page-list/page-list.php:700 widgets/post-list/post-list.php:469
 #: widgets/post-list/post-list.php:521 widgets/post-list/post-list.php:860
@@ -2610,7 +2614,7 @@ msgstr ""
 #: widgets/icon-box/icon-box.php:1735 widgets/image-box/image-box.php:594
 #: widgets/image-box/image-box.php:888 widgets/image-box/image-box.php:940
 #: widgets/mail-chimp/mail-chimp.php:703 widgets/mail-chimp/mail-chimp.php:939
-#: widgets/nav-menu/nav-menu.php:1031 widgets/page-list/page-list.php:374
+#: widgets/nav-menu/nav-menu.php:1081 widgets/page-list/page-list.php:374
 #: widgets/piechart/piechart.php:572 widgets/post-tab/post-tab.php:263
 #: widgets/post-tab/post-tab.php:324 widgets/pricing/pricing.php:1067
 #: widgets/pricing/pricing.php:1104 widgets/tab/tab.php:540
@@ -2680,9 +2684,9 @@ msgstr ""
 #: widgets/mail-chimp/mail-chimp.php:711 widgets/mail-chimp/mail-chimp.php:920
 #: widgets/mail-chimp/mail-chimp.php:1249
 #: widgets/mail-chimp/mail-chimp.php:1283 widgets/nav-menu/nav-menu.php:347
-#: widgets/nav-menu/nav-menu.php:952 widgets/nav-menu/nav-menu.php:1081
-#: widgets/nav-menu/nav-menu.php:1284 widgets/nav-menu/nav-menu.php:1548
-#: widgets/ninja-forms/ninja-forms.php:435
+#: widgets/nav-menu/nav-menu.php:773 widgets/nav-menu/nav-menu.php:1002
+#: widgets/nav-menu/nav-menu.php:1131 widgets/nav-menu/nav-menu.php:1334
+#: widgets/nav-menu/nav-menu.php:1598 widgets/ninja-forms/ninja-forms.php:435
 #: widgets/ninja-forms/ninja-forms.php:744 widgets/page-list/page-list.php:328
 #: widgets/page-list/page-list.php:872 widgets/page-list/page-list.php:912
 #: widgets/piechart/piechart.php:384 widgets/post-list/post-list.php:430
@@ -2754,8 +2758,8 @@ msgstr ""
 #: widgets/image-box/image-box.php:560 widgets/image-box/image-box.php:616
 #: widgets/image-box/image-box.php:864 widgets/image-box/image-box.php:916
 #: widgets/mail-chimp/mail-chimp.php:741 widgets/mail-chimp/mail-chimp.php:976
-#: widgets/nav-menu/nav-menu.php:367 widgets/nav-menu/nav-menu.php:1101
-#: widgets/nav-menu/nav-menu.php:1324 widgets/nav-menu/nav-menu.php:1474
+#: widgets/nav-menu/nav-menu.php:367 widgets/nav-menu/nav-menu.php:1151
+#: widgets/nav-menu/nav-menu.php:1374 widgets/nav-menu/nav-menu.php:1524
 #: widgets/ninja-forms/ninja-forms.php:599
 #: widgets/ninja-forms/ninja-forms.php:642 widgets/page-list/page-list.php:502
 #: widgets/page-list/page-list.php:627 widgets/post-list/post-list.php:695
@@ -2842,8 +2846,9 @@ msgstr ""
 #: widgets/image-comparison/image-comparison.php:374
 #: widgets/image-comparison/image-comparison.php:570
 #: widgets/mail-chimp/mail-chimp.php:638 widgets/mail-chimp/mail-chimp.php:1007
-#: widgets/mail-chimp/mail-chimp.php:1295 widgets/nav-menu/nav-menu.php:1304
-#: widgets/nav-menu/nav-menu.php:1528 widgets/ninja-forms/ninja-forms.php:138
+#: widgets/mail-chimp/mail-chimp.php:1295 widgets/nav-menu/nav-menu.php:758
+#: widgets/nav-menu/nav-menu.php:1354 widgets/nav-menu/nav-menu.php:1578
+#: widgets/ninja-forms/ninja-forms.php:138
 #: widgets/ninja-forms/ninja-forms.php:756 widgets/page-list/page-list.php:340
 #: widgets/page-list/page-list.php:728 widgets/page-list/page-list.php:783
 #: widgets/page-list/page-list.php:901 widgets/piechart/piechart.php:320
@@ -3032,8 +3037,8 @@ msgstr ""
 #: widgets/image-box/image-box.php:1197 widgets/image-box/image-box.php:1284
 #: widgets/image-box/image-box.php:1364 widgets/mail-chimp/mail-chimp.php:618
 #: widgets/mail-chimp/mail-chimp.php:662 widgets/mail-chimp/mail-chimp.php:900
-#: widgets/nav-menu/nav-menu.php:447 widgets/nav-menu/nav-menu.php:747
-#: widgets/nav-menu/nav-menu.php:1276 widgets/ninja-forms/ninja-forms.php:130
+#: widgets/nav-menu/nav-menu.php:447 widgets/nav-menu/nav-menu.php:797
+#: widgets/nav-menu/nav-menu.php:1326 widgets/ninja-forms/ninja-forms.php:130
 #: widgets/ninja-forms/ninja-forms.php:180
 #: widgets/ninja-forms/ninja-forms.php:231
 #: widgets/ninja-forms/ninja-forms.php:310
@@ -3112,8 +3117,8 @@ msgstr ""
 #: widgets/image-box/image-box.php:1294 widgets/image-box/image-box.php:1393
 #: widgets/image-comparison/image-comparison.php:454
 #: widgets/lottie/lottie.php:262 widgets/mail-chimp/mail-chimp.php:1022
-#: widgets/nav-menu/nav-menu.php:471 widgets/nav-menu/nav-menu.php:785
-#: widgets/nav-menu/nav-menu.php:1179 widgets/nav-menu/nav-menu.php:1380
+#: widgets/nav-menu/nav-menu.php:471 widgets/nav-menu/nav-menu.php:835
+#: widgets/nav-menu/nav-menu.php:1229 widgets/nav-menu/nav-menu.php:1430
 #: widgets/ninja-forms/ninja-forms.php:278
 #: widgets/ninja-forms/ninja-forms.php:670 widgets/piechart/piechart.php:455
 #: widgets/piechart/piechart.php:584 widgets/post-list/post-list.php:444
@@ -3179,8 +3184,8 @@ msgstr ""
 #: widgets/image-comparison/image-comparison.php:511
 #: widgets/lottie/lottie.php:295 widgets/mail-chimp/mail-chimp.php:1054
 #: widgets/nav-menu/nav-menu.php:97 widgets/nav-menu/nav-menu.php:525
-#: widgets/nav-menu/nav-menu.php:817 widgets/nav-menu/nav-menu.php:1221
-#: widgets/nav-menu/nav-menu.php:1421 widgets/ninja-forms/ninja-forms.php:770
+#: widgets/nav-menu/nav-menu.php:867 widgets/nav-menu/nav-menu.php:1271
+#: widgets/nav-menu/nav-menu.php:1471 widgets/ninja-forms/ninja-forms.php:770
 #: widgets/page-list/page-list.php:392 widgets/page-list/page-list.php:795
 #: widgets/piechart/piechart.php:604 widgets/post-list/post-list.php:496
 #: widgets/post-list/post-list.php:609 widgets/post-list/post-list.php:891
@@ -3537,7 +3542,7 @@ msgstr ""
 
 #: widgets/blog-posts/blog-posts.php:730 widgets/funfact/funfact.php:1062
 #: widgets/header-search/header-search.php:527
-#: widgets/icon-box/icon-box.php:739 widgets/nav-menu/nav-menu.php:1067
+#: widgets/icon-box/icon-box.php:739 widgets/nav-menu/nav-menu.php:1117
 #: widgets/pricing/pricing.php:1503 widgets/pricing/pricing.php:1573
 msgid "Middle"
 msgstr ""
@@ -3615,7 +3620,7 @@ msgstr ""
 #: widgets/header-offcanvas/header-offcanvas.php:428
 #: widgets/header-offcanvas/header-offcanvas.php:648
 #: widgets/image-accordion/image-accordion.php:505
-#: widgets/mail-chimp/mail-chimp.php:1150 widgets/nav-menu/nav-menu.php:1153
+#: widgets/mail-chimp/mail-chimp.php:1150 widgets/nav-menu/nav-menu.php:1203
 #: widgets/post-list/post-list.php:1058 widgets/pricing/pricing.php:289
 #: widgets/pricing/pricing.php:2112 widgets/progressbar/progressbar.php:469
 #: widgets/social/social.php:511 widgets/social-share/social-share.php:605
@@ -3658,7 +3663,7 @@ msgstr ""
 #: widgets/heading/heading.php:1175 widgets/icon-box/icon-box.php:1196
 #: widgets/image-box/image-box.php:421
 #: widgets/image-comparison/image-comparison.php:434
-#: widgets/nav-menu/nav-menu.php:1501 widgets/page-list/page-list.php:520
+#: widgets/nav-menu/nav-menu.php:1551 widgets/page-list/page-list.php:520
 #: widgets/page-list/page-list.php:652 widgets/post-list/post-list.php:713
 #: widgets/post-list/post-list.php:805 widgets/post-tab/post-tab.php:389
 #: widgets/progressbar/progressbar.php:183 widgets/social/social.php:588
@@ -4349,7 +4354,7 @@ msgstr ""
 #: widgets/client-logo/client-logo.php:832
 #: widgets/header-offcanvas/header-offcanvas.php:796
 #: widgets/heading/heading.php:1240 widgets/icon-box/icon-box.php:477
-#: widgets/nav-menu/nav-menu.php:1058 widgets/pricing/pricing.php:1544
+#: widgets/nav-menu/nav-menu.php:1108 widgets/pricing/pricing.php:1544
 #: widgets/team/team.php:1352 widgets/team/team.php:1909
 msgid "Position"
 msgstr ""
@@ -4773,7 +4778,7 @@ msgstr ""
 #: widgets/fluent-forms/fluent-forms.php:1979 widgets/funfact/funfact.php:863
 #: widgets/funfact/funfact.php:907 widgets/icon-box/icon-box.php:1129
 #: widgets/image-box/image-box.php:1176 widgets/image-box/image-box.php:1263
-#: widgets/nav-menu/nav-menu.php:755 widgets/ninja-forms/ninja-forms.php:211
+#: widgets/nav-menu/nav-menu.php:805 widgets/ninja-forms/ninja-forms.php:211
 #: widgets/ninja-forms/ninja-forms.php:448
 #: widgets/ninja-forms/ninja-forms.php:543 widgets/pricing/pricing.php:2065
 msgid "Spacing"
@@ -6213,7 +6218,7 @@ msgstr ""
 msgid "Icon Library"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:144
+#: widgets/nav-menu/nav-menu.php:144 widgets/nav-menu/nav-menu.php:682
 msgid "Submenu Indicator"
 msgstr ""
 
@@ -6260,7 +6265,7 @@ msgstr ""
 msgid "Mobile Menu Settings"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:207 widgets/nav-menu/nav-menu.php:1466
+#: widgets/nav-menu/nav-menu.php:207 widgets/nav-menu/nav-menu.php:1516
 msgid "Mobile Menu Logo"
 msgstr ""
 
@@ -6321,7 +6326,7 @@ msgid "This is only work with Mega menu icon option"
 msgstr ""
 
 #: widgets/nav-menu/nav-menu.php:436
-msgid "Menu item style"
+msgid "Menu Item"
 msgstr ""
 
 #: widgets/nav-menu/nav-menu.php:457
@@ -6329,12 +6334,12 @@ msgid "Menu Item Style"
 msgstr ""
 
 #: widgets/nav-menu/nav-menu.php:479 widgets/nav-menu/nav-menu.php:533
-#: widgets/nav-menu/nav-menu.php:593 widgets/nav-menu/nav-menu.php:806
+#: widgets/nav-menu/nav-menu.php:593 widgets/nav-menu/nav-menu.php:856
 msgid "Item background"
 msgstr ""
 
 #: widgets/nav-menu/nav-menu.php:488 widgets/nav-menu/nav-menu.php:542
-#: widgets/nav-menu/nav-menu.php:792
+#: widgets/nav-menu/nav-menu.php:842
 msgid "Item text color"
 msgstr ""
 
@@ -6343,7 +6348,7 @@ msgstr ""
 msgid "Border Radius (px)"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:602 widgets/nav-menu/nav-menu.php:862
+#: widgets/nav-menu/nav-menu.php:602 widgets/nav-menu/nav-menu.php:912
 msgid "Item text color (Active)"
 msgstr ""
 
@@ -6351,80 +6356,72 @@ msgstr ""
 msgid "Item Spacing"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:682
-msgid "Submenu indicator style"
-msgstr ""
-
 #: widgets/nav-menu/nav-menu.php:710
-msgid "Indicator color"
+msgid "color"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:723
-msgid "Indicator Margin (px)"
+#: widgets/nav-menu/nav-menu.php:788
+msgid "Submenu Item"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:738
-msgid "Submenu item style"
-msgstr ""
-
-#: widgets/nav-menu/nav-menu.php:824
+#: widgets/nav-menu/nav-menu.php:874
 msgid "Item text color (hover)"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:840
+#: widgets/nav-menu/nav-menu.php:890
 msgid "Item background (hover)"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:875
+#: widgets/nav-menu/nav-menu.php:925
 msgid "Item background (Active)"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:888
+#: widgets/nav-menu/nav-menu.php:938
 msgid "Sub Menu Items Border"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:906
+#: widgets/nav-menu/nav-menu.php:956
 msgid "Border Last Child"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:916
+#: widgets/nav-menu/nav-menu.php:966
 msgid "Border last Child"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:924 widgets/nav-menu/nav-menu.php:934
+#: widgets/nav-menu/nav-menu.php:974 widgets/nav-menu/nav-menu.php:984
 msgid "Border First Child"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:944
-msgid "Submenu panel style"
+#: widgets/nav-menu/nav-menu.php:994
+msgid "Submenu Panel"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:971
+#: widgets/nav-menu/nav-menu.php:1021
 msgid "Panel Menu Border"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:980
+#: widgets/nav-menu/nav-menu.php:1030
 msgid "Container background"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:1015
+#: widgets/nav-menu/nav-menu.php:1065
 msgid "Conatiner width"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:1041
-msgid "Hamburger Style"
+#: widgets/nav-menu/nav-menu.php:1091
+msgid "Hamburger Menu"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:1049
+#: widgets/nav-menu/nav-menu.php:1099
 msgid "Hamburger Toggle"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:1206 widgets/nav-menu/nav-menu.php:1248
-#: widgets/nav-menu/nav-menu.php:1407 widgets/nav-menu/nav-menu.php:1448
+#: widgets/nav-menu/nav-menu.php:1256 widgets/nav-menu/nav-menu.php:1298
+#: widgets/nav-menu/nav-menu.php:1457 widgets/nav-menu/nav-menu.php:1498
 msgid "Hamburger Icon Color"
 msgstr ""
 
-#: widgets/nav-menu/nav-menu.php:1266
+#: widgets/nav-menu/nav-menu.php:1316
 msgid "Close Toggle"
 msgstr ""
 
