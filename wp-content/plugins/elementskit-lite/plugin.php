@@ -175,7 +175,7 @@ class Plugin {
 			->set_plugin_action_link( 'Settings', admin_url() . 'admin.php?page=elementskit' )
 			->set_plugin_action_link(
 				( $is_pro_active ? '' : 'Go Premium' ),
-				'https://wpmet.com/plugin/elementskit',
+				'https://wpmet.com/elementskit-pricing',
 				array(
 					'target' => '_blank',
 					'style'  => 'color: #FCB214; font-weight: bold;',
