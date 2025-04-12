@@ -4,7 +4,7 @@ Tags: Elementor addons, mega menu builder,  header footer builder, elementor add
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 3.4.7
+Stable tag: 3.4.8
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -332,6 +332,10 @@ If you like using ElementsKit Elementor addon, then consider checking out our ot
 Visit  [wpmet](https://wpmet.com/?utm_source=org&utm_medium=readme)  to learn more about how to get the best of WordPress with  [Tutorials, Tips & Tricks](https://wpmet.com/blog)!
 
 == Changelog ==
+ElementsKit Elementor Addons Version: 3.4.8 (2025-03-27)
+Fixed: Background gradient color not working in team widget
+Fixed: Countdown timer widget flip style expiry title escaping
+
 ElementsKit Elementor Addons Version: 3.4.7 (2025-03-18)
 Fixed: Swiper compatibility support for `Elementor 3.28.0`
 

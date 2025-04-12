@@ -21,7 +21,6 @@ class Module extends BaseModule {
 	public function __construct() {
 		parent::__construct();
 
-		$this->register_experiments();
 		$this->register_shortcode();
 
 		if ( ! Plugin::$instance->experiments->is_feature_active( 'e_element_cache' ) ) {
@@ -37,8 +36,8 @@ class Module extends BaseModule {
 		$this->clear_cache_on_site_changed();
 	}
 
-	private function register_experiments() {
-		Plugin::$instance->experiments->add_feature( [
+	public static function get_experimental_data(): array {
+		return [
 			'name' => 'e_element_cache',
 			'title' => esc_html__( 'Element Caching', 'elementor' ),
 			'tag' => esc_html__( 'Performance', 'elementor' ),
@@ -50,7 +49,7 @@ class Module extends BaseModule {
 				'minimum_installation_version' => '3.23.0',
 			],
 			'generator_tag' => true,
-		] );
+		];
 	}
 
 	private function register_shortcode() {
@@ -64,6 +63,8 @@ class Module extends BaseModule {
 			if ( empty( $widget_data ) || ! is_array( $widget_data ) ) {
 				return '';
 			}
+
+			$widget_data['settings']['isShortcode'] = true;
 
 			ob_start();
 
@@ -123,12 +124,13 @@ class Module extends BaseModule {
 			Settings::TAB_PERFORMANCE,
 			'element_cache_ttl',
 			[
-				'label' => esc_html__( 'Element Cache Expiration', 'elementor' ),
+				'label' => esc_html__( 'Element Cache', 'elementor' ),
 				'field_args' => [
 					'class' => 'elementor-element-cache-ttl',
 					'type' => 'select',
 					'std' => '24',
 					'options' => [
+						'disable' => esc_html__( 'Disable', 'elementor' ),
 						'1' => esc_html__( '1 Hour', 'elementor' ),
 						'6' => esc_html__( '6 Hours', 'elementor' ),
 						'12' => esc_html__( '12 Hours', 'elementor' ),
@@ -150,10 +152,11 @@ class Module extends BaseModule {
 		add_action( 'deactivated_plugin', [ $this, 'clear_cache' ] );
 		add_action( 'switch_theme', [ $this, 'clear_cache' ] );
 		add_action( 'upgrader_process_complete', [ $this, 'clear_cache' ] );
+
+		add_action( 'update_option_elementor_element_cache_ttl', [ $this, 'clear_cache' ] );
 	}
 
 	public function clear_cache() {
 		Plugin::$instance->files_manager->clear_cache();
-
 	}
 }

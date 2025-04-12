@@ -129,6 +129,8 @@ class Header_Footer_Elementor {
 				add_action( 'admin_init', [ $this, 'get_plugin_version' ] );
 			}
 
+			// Filter to change Astra menu positon.
+			add_filter( 'astra_menu_priority', array( $this, 'update_admin_menu_position' ) );
 			// Scripts and styles.
 			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 
@@ -169,12 +171,17 @@ class Header_Footer_Elementor {
 						],
 					],
 				]
-			);
-
-			if ( ! class_exists( 'HFE_Utm_Analytics' ) ) {
-				require_once HFE_DIR . 'inc/lib/class-hfe-utm-analytics.php';
-			}       
+			);   
 		}
+	}
+
+	/**
+	 * Update Astra's menu priority to show after Dashboard menu.
+	 *
+	 * @param int $menu_priority top level menu priority.
+	 */
+	public function update_admin_menu_position( $menu_priority ) {
+		return 2.1;
 	}
 
 	/**
@@ -653,7 +660,7 @@ class Header_Footer_Elementor {
 	 */
 	public static function get_header_content() {
 		$header_content = self::$elementor_instance->frontend->get_builder_content_for_display( get_hfe_header_id() );
-		echo $header_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $header_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped output is not rendered on frontend.
 	}
 
 	/**
@@ -663,7 +670,7 @@ class Header_Footer_Elementor {
 	 */
 	public static function get_footer_content() {
 		echo "<div class='footer-width-fixer'>";
-		echo self::$elementor_instance->frontend->get_builder_content_for_display( get_hfe_footer_id() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo self::$elementor_instance->frontend->get_builder_content_for_display( get_hfe_footer_id() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped output is not rendered on frontend.
 		echo '</div>';
 	}
 
@@ -674,7 +681,7 @@ class Header_Footer_Elementor {
 	 */
 	public static function get_before_footer_content() {
 		echo "<div class='footer-width-fixer'>";
-		echo self::$elementor_instance->frontend->get_builder_content_for_display( hfe_get_before_footer_id() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo self::$elementor_instance->frontend->get_builder_content_for_display( hfe_get_before_footer_id() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped output is not rendered on frontend.
 		echo '</div>';
 	}
 
