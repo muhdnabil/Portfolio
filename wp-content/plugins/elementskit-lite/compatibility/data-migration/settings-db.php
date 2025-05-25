@@ -46,18 +46,27 @@ class Settings_Db {
 		if (!empty($options['plugins']) && $options['action'] == 'update' && $options['type'] == 'plugin' ) {
 			foreach($options['plugins'] as $plugin) {
 				if ($plugin == $our_plugin) {
-					if (get_transient('social_share_css_was_updated')) {
-						delete_transient('social_share_css_was_updated');
-					}
+					$this->regenerate_widget_builder_widgets();
+				}
+			}
+		}
+	}
 
-					if (get_transient('team_widget_css_was_updated')) {
-						delete_transient('team_widget_css_was_updated');
-					}
+	public function regenerate_widget_builder_widgets() {
+		$args = array(
+			'post_type'      => 'elementskit_widget',
+			'post_status'    => 'publish', // Only get published posts
+			'posts_per_page' => -1,
+		);
 
-					if ( !get_transient('clear_cache')) {
-						set_transient('clear_cache', \ElementsKit_Lite::version());
-						\Elementor\Plugin::$instance->files_manager->clear_cache();
-					}
+		$posts = get_posts($args);
+	
+		if ($posts) {
+			foreach ($posts as $post) {
+				$id = $post->ID;
+				$widget_data = get_post_meta($id, 'elementskit_custom_widget_data', true);
+				if(!empty($widget_data) && is_object( $widget_data )) {
+					\ElementsKit_Lite\Modules\Widget_Builder\Widget_File::instance()->create( $widget_data, $id );
 				}
 			}
 		}

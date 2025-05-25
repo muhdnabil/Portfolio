@@ -3,9 +3,9 @@ Contributors:narinder-singh,satindersingh,coolplugins
 Donate link: https://paypal.me/CoolPlugins/10USD/
 Tags:timeline,elementor timeline,roadmap,history,horizontal timeline
 Requires at least:5.0
-Tested up to:6.7.2
+Tested up to:6.8.1
 Requires PHP:7.2
-Stable tag:1.6.7
+Stable tag:1.6.8
 License:GPLv2 or later
 License URI:http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -114,11 +114,11 @@ You can show your stories, events, appointments, concerts, future & history happ
 For detailed help and support, visit our [support page](https://coolplugins.net/support/). 
 
 == Screenshots ==
-1.  Timeline Widget Demo Preview
+1.  Timeline Widget Vertical on both sides/ One-sided Layout Preview
 2.  Timeline Widget Horizontal Timeline configuration 
-3.  Timeline Widget Vertical on both sides/ One-sided Layout Preview
-4.  Add New Story Settings Preview.
-5.  Style Settings Preview
+3.  Add New Story Settings Preview.
+4.  Style Settings Preview
+5.  Timeline Widget Demo Preview
 
 == Frequently Asked Questions ==
 
@@ -191,10 +191,13 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 == Changelog ==
 
+**Version 1.6.8 | 05 May 2025**
+- **Tested up to:** WordPress 6.8.1.
+
 **Version 1.6.7 | 18 March 2025**
-- **Tested up to:** Elementor 3.28.0
-- **Tested up to:** Elementor Pro 3.28.0
-- **Tested up to:** WordPress 6.7.2
+- **Tested up to:** Elementor 3.28.0.
+- **Tested up to:** Elementor Pro 3.28.0.
+- **Tested up to:** WordPress 6.7.2.
 
 **Version 1.6.6 | 17 December 2024**
 - **Fixed:** Swiper styling issue with Elementor 3.26.0.
@@ -304,7 +307,7 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 - **Improved:** Minor fixes
 
 **Version 1.3.1 | 20 OCT 2021**
-- **Improved:** Tested up to Elementor version 3.4.6
+- **Tested up to:** Elementor version 3.4.6
 - **Improved:** Minor textual changes
 
 **Version 1.3 | 23 APR 2021**
@@ -312,11 +315,11 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 - **Fixed:** PHP Deprecated: Elementor\Scheme_Typography & Elementor\Scheme_Color
 - **Improved:** Settings panel, code flow, JS code
 - **Improved:** Horizontal Timeline Responsive
-- **Improved:** Tested up to 5.7
+- **Tested up to:** WordPress version 5.7
 
 **Version 1.2.2 | 10 DEC 2020**
 - **Fixed:** Fixed RTL support issues in horizontal layout
-- **Fixed:** Tested up to 5.6
+- **Tested up to:** WordPress version 5.6
 
 **Version 1.2.1 | 19 SEP 2020**
 - **Fixed:** Fixed compatibility issues with Elementor 2.9 or lower version

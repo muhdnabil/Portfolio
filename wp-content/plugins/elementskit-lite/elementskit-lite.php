@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
  * Description: The most advanced addons for Elementor with tons of widgets, Header builder, Footer builder, Mega menu builder, layout pack and powerful custom controls.
  * Plugin URI: https://products.wpmet.com/elementskit
  * Author: Wpmet
- * Version: 3.4.8
+ * Version: 3.5.2
  * Author URI: https://wpmet.com/
  * License: GPLv3 or later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -34,7 +34,7 @@ final class ElementsKit_Lite {
 	 * @var string The plugin version.
 	 */
 	static function version() {
-		return '3.4.8';
+		return '3.5.2';
 	}
 
 	/**
@@ -278,23 +278,8 @@ final class ElementsKit_Lite {
 		require_once self::plugin_dir() . 'libs/emailkit/emailkit.php';
 		require_once self::plugin_dir() . 'helpers/utils.php';
 
-		// Load translation
-		add_action( 'init', array( $this, 'i18n' ) );
 		// Init Plugin
 		add_action( 'plugins_loaded', array( $this, 'init' ), 100 );
-	}
-
-	/**
-	 * Load Textdomain
-	 *
-	 * Load plugin localization files.
-	 * Fired by `init` action hook.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
-	public function i18n() {
-		load_plugin_textdomain( 'elementskit-lite', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**

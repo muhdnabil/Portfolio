@@ -813,5 +813,20 @@
 				<field type="Content Ticker: Link" key_of="ekit_content_ticker_text_url" editor_type="LINE">url</field>
 			</fields-in-item>
 		</widget>
+		<widget name="elementskit-advanced-search">
+			<conditions>
+				<condition key="widgetType">elementskit-advanced-search</condition>
+			</conditions>
+			<fields>
+				<field type="Advanced Search: Placeholder" editor_type="LINE">ekit_adv_section_search_placeholder</field>
+				<field type="Advanced Search: Categories" editor_type="LINE">ekit_adv_section_search_categories</field>
+				<field type="Advanced Search: Tags" editor_type="LINE">ekit_adv_section_search_tags</field>
+				<field type="Advanced Search: Button" editor_type="LINE">ekit_adv_section_search_button</field>
+				<field type="Advanced Search: Load More" editor_type="LINE">ekit_search_load_more_button</field>
+				<field type="Advanced Search: Copyright Url" editor_type="LINE">ekit_search_in_copyright_url>url</field>
+				<field type="Advanced Search: Copyright Name" editor_type="LINE">ekit_search_in_copyright_name</field>
+				<field type="Advanced Search: Keywords Title" editor_type="LINE">ekit_adv_show_popular_keyword_title</field>
+			</fields>
+		</widget>
 	</elementor-widgets>
 </wpml-config>

@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ElementsKit Lite 3.4.8\n"
+"Project-Id-Version: ElementsKit Lite 3.5.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/elementskit-lite\n"
-"POT-Creation-Date: 2025-03-27 07:47:16+00:00\n"
+"POT-Creation-Date: 2025-05-25 06:37:10+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,35 +41,35 @@ msgstr ""
 msgid "6"
 msgstr ""
 
-#: elementskit-lite.php:377
+#: elementskit-lite.php:362
 msgid "Activate Elementor"
 msgstr ""
 
-#: elementskit-lite.php:380
+#: elementskit-lite.php:365
 msgid "Install Elementor"
 msgstr ""
 
-#: elementskit-lite.php:387
+#: elementskit-lite.php:372
 msgid "ElementsKit requires Elementor version"
 msgstr ""
 
-#: elementskit-lite.php:389
+#: elementskit-lite.php:374
 msgid "which is currently NOT RUNNING."
 msgstr ""
 
-#: elementskit-lite.php:407
+#: elementskit-lite.php:392
 msgid "ElementsKit requires PHP version"
 msgstr ""
 
-#: elementskit-lite.php:409
+#: elementskit-lite.php:394
 msgid "which is currently NOT RUNNING on this server."
 msgstr ""
 
-#: elementskit-lite.php:436 libs/framework/views/onboard-steps/step-05.php:8
+#: elementskit-lite.php:421 libs/framework/views/onboard-steps/step-05.php:8
 msgid "ElementsKit"
 msgstr ""
 
-#: elementskit-lite.php:444
+#: elementskit-lite.php:429
 msgid "ElementsKit Header Footer"
 msgstr ""
 
@@ -1261,6 +1261,10 @@ msgstr ""
 
 #: modules/header-footer/views/modal-editor.php:77
 msgid "Save changes"
+msgstr ""
+
+#: modules/header-footer/views/theme-support-header.php:37
+msgid "Skip to content"
 msgstr ""
 
 #: modules/layout-manager/layout-import-api.php:25

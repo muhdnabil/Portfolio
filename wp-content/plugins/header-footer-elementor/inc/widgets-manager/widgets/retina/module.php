@@ -1,6 +1,6 @@
 <?php
 /**
- * HFEWpfStyler Module.
+ * HFE Retina Module.
  *
  * @package header-footer-elementor
  */

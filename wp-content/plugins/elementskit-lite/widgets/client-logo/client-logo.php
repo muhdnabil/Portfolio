@@ -862,7 +862,7 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementskit-clients-slider .swiper-navigation-button' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .elementskit-clients-slider .swiper-navigation-button svg' => 'font-size: {{SIZE}}{{UNIT}}; width: 1em; height: 1em;',
+					'{{WRAPPER}} .elementskit-clients-slider .swiper-navigation-button svg' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
         );

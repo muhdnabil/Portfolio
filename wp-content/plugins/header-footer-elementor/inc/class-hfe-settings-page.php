@@ -300,6 +300,8 @@ class HFE_Settings_Page {
 					'theme_url'                => HFE_URL . 'assets/images/settings/layout-template.svg',
 					'version_url'              => HFE_URL . 'assets/images/settings/version.svg',
 					'version__selected_url'    => HFE_URL . 'assets/images/settings/git-compare.svg',
+					'tracking_url'              => HFE_URL . 'assets/images/settings/tracking.svg',
+					'tracking__selected_url'    => HFE_URL . 'assets/images/settings/tracking_selected.svg',
 					'user_url'                 => HFE_URL . 'assets/images/settings/user.svg',
 					'user__selected_url'       => HFE_URL . 'assets/images/settings/user-selected.svg',
 					'integrations_url'         => HFE_URL . 'assets/images/settings/integrations.svg', // Update the path to your assets folder.
@@ -324,6 +326,8 @@ class HFE_Settings_Page {
 					'is_hfe_post'              => $is_hfe_post,
 					'user_email'               => $user_email,
 					'analytics_status'         => $analytics_status,
+					'onboarding_success_url'   => admin_url( 'admin.php?page=hfe#onboardingsuccess' ),
+					'uaelite_subscription'	   => get_option( 'uaelite_subscription', false )
 				]
 			);
 	
@@ -380,7 +384,6 @@ class HFE_Settings_Page {
 			'hfe_edit_url'          => $hfe_edit_url,
 			'view_all_text'         => esc_html__( 'View All', 'header-footer-elementor' ),
 			'header_footer_builder' => $hfe_edit_url,
-	
 		];
 	
 		$strings = apply_filters( 'hfe_admin_strings', $strings );
@@ -574,6 +577,18 @@ class HFE_Settings_Page {
 			[ $this, 'render' ],
 			9
 		);
+
+
+			// Add the Settings Submenu.
+			add_submenu_page(
+				$menu_slug,
+				__( 'Onboarding', 'header-footer-elementor' ),
+				__( 'Onboardingsuccess', 'header-footer-elementor' ),
+				$capability,
+				$menu_slug . '#onboardingsuccess',
+				[ $this, 'render' ],
+				9
+			);
 	}
 	
 
